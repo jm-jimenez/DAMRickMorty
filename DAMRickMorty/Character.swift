@@ -12,4 +12,12 @@ struct Character: Decodable {
     let name: String
     let species: String
     let status: String
+    let gender: String
+    let origin: Namable
+    let location: Namable
+    let episode: [String]
+
+    struct Namable: Decodable {
+        let name: String
+    }
 }

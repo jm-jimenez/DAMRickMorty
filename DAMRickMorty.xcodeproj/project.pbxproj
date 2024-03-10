@@ -24,6 +24,9 @@
 		1AB4610D2B9DD471002AA8F8 /* DetailItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4610B2B9DD471002AA8F8 /* DetailItemCell.swift */; };
 		1AB4610E2B9DD471002AA8F8 /* DetailItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4610C2B9DD471002AA8F8 /* DetailItemCell.xib */; };
 		1AB461102B9DD539002AA8F8 /* DetailSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4610F2B9DD539002AA8F8 /* DetailSections.swift */; };
+		1AB461132B9DD8DB002AA8F8 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB461112B9DD8DB002AA8F8 /* EpisodeCell.swift */; };
+		1AB461142B9DD8DB002AA8F8 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB461122B9DD8DB002AA8F8 /* EpisodeCell.xib */; };
+		1AB461162B9DD9AE002AA8F8 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB461152B9DD9AE002AA8F8 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		1AB4610B2B9DD471002AA8F8 /* DetailItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemCell.swift; sourceTree = "<group>"; };
 		1AB4610C2B9DD471002AA8F8 /* DetailItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailItemCell.xib; sourceTree = "<group>"; };
 		1AB4610F2B9DD539002AA8F8 /* DetailSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSections.swift; sourceTree = "<group>"; };
+		1AB461112B9DD8DB002AA8F8 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		1AB461122B9DD8DB002AA8F8 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		1AB461152B9DD9AE002AA8F8 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 				1A81788B2B95E5A500245ACD /* Info.plist */,
 				1AB460F62B9DC7ED002AA8F8 /* Character.swift */,
 				1AB460F82B9DC997002AA8F8 /* GetCharactersReponse.swift */,
+				1AB461152B9DD9AE002AA8F8 /* Episode.swift */,
 			);
 			path = DAMRickMorty;
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 				1AB4610B2B9DD471002AA8F8 /* DetailItemCell.swift */,
 				1AB4610C2B9DD471002AA8F8 /* DetailItemCell.xib */,
 				1AB4610F2B9DD539002AA8F8 /* DetailSections.swift */,
+				1AB461112B9DD8DB002AA8F8 /* EpisodeCell.swift */,
+				1AB461122B9DD8DB002AA8F8 /* EpisodeCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB461072B9DCFE8002AA8F8 /* RickMortyDetailViewController.xib in Resources */,
+				1AB461142B9DD8DB002AA8F8 /* EpisodeCell.xib in Resources */,
 				1A81788A2B95E5A500245ACD /* LaunchScreen.storyboard in Resources */,
 				1A8178872B95E5A500245ACD /* Assets.xcassets in Resources */,
 				1AB4610E2B9DD471002AA8F8 /* DetailItemCell.xib in Resources */,
@@ -251,7 +261,9 @@
 				1A8178932B95E63700245ACD /* RickMortyListViewController.swift in Sources */,
 				1AB461092B9DD12D002AA8F8 /* RickMortyDetailPresenter.swift in Sources */,
 				1AB460F92B9DC997002AA8F8 /* GetCharactersReponse.swift in Sources */,
+				1AB461132B9DD8DB002AA8F8 /* EpisodeCell.swift in Sources */,
 				1A81787E2B95E5A300245ACD /* AppDelegate.swift in Sources */,
+				1AB461162B9DD9AE002AA8F8 /* Episode.swift in Sources */,
 				1AB461062B9DCFE8002AA8F8 /* RickMortyDetailViewController.swift in Sources */,
 				1AB461102B9DD539002AA8F8 /* DetailSections.swift in Sources */,
 				1AB460F72B9DC7ED002AA8F8 /* Character.swift in Sources */,

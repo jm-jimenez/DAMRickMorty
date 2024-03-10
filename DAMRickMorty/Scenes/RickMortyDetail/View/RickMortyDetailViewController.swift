@@ -9,6 +9,7 @@ import UIKit
 
 protocol RickMortyDetailViewProtocol: AnyObject {
     func setCharacterInfo(_ character: Character)
+    func updateEpisodes(_ episodes: [Episode])
 }
 
 final class RickMortyDetailViewController: UIViewController {
@@ -48,9 +49,15 @@ extension RickMortyDetailViewController: RickMortyDetailViewProtocol {
         let viewModels =
         [DetailItemViewModel(title: "Name", value: character.name),
          DetailItemViewModel(title: "Species", value: character.species),
-         DetailItemViewModel(title: "Status", value: character.status)
+         DetailItemViewModel(title: "Status", value: character.status),
+         DetailItemViewModel(title: "Origin", value: character.origin.name),
+         DetailItemViewModel(title: "Location", value: character.location.name)
         ]
         sections = [.detail(viewModels: viewModels)]
+    }
+
+    func updateEpisodes(_ episodes: [Episode]) {
+        sections.append(.episodes(episodes: episodes))
     }
 }
 
@@ -61,6 +68,7 @@ private extension RickMortyDetailViewController {
 
     func setupTableView() {
         tableView.register(UINib(nibName: "DetailItemCell", bundle: nil), forCellReuseIdentifier: "DetailItemCellReuse")
+        tableView.register(UINib(nibName: "EpisodeCell", bundle: nil), forCellReuseIdentifier: "EpisodeCellReuse")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -90,5 +98,9 @@ extension RickMortyDetailViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         sections[indexPath.section].cell(for: tableView, at: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sections[section].title
     }
 }

@@ -10,12 +10,19 @@ import UIKit
 
 enum DetailSections {
     case detail(viewModels: [DetailItemViewModel])
-    case episodes
+    case episodes(episodes: [Episode])
 
     var numberOfRows: Int {
         switch self {
         case .detail(let viewModels): return viewModels.count
-        case .episodes: return 0
+        case .episodes(let episodes): return episodes.count
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .detail: return "Character's details"
+        case .episodes: return "Appears in"
         }
     }
 
@@ -25,7 +32,10 @@ enum DetailSections {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailItemCellReuse", for: indexPath) as? DetailItemCell else { return UITableViewCell() }
             cell.setupViewModel(viewModels[indexPath.item])
             return cell
-        case .episodes: return UITableViewCell()
+        case .episodes(let episodes):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCellReuse", for: indexPath) as? EpisodeCell else { return UITableViewCell() }
+            cell.setupEpisode(episodes[indexPath.item])
+            return cell
         }
     }
 }
