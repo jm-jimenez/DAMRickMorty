@@ -10,10 +10,16 @@ import Foundation
 protocol RickMortyListPresenterProtocol {
     var view: RickMortyListViewProtocol? { get set }
     func getCharacters()
+    func didSelectCharacter(_ character: Character)
 }
 
 final class RickMortyListPresenter {
     weak var view: RickMortyListViewProtocol?
+    private var coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
 }
 
 extension RickMortyListPresenter: RickMortyListPresenterProtocol {
@@ -28,5 +34,9 @@ extension RickMortyListPresenter: RickMortyListPresenterProtocol {
                 }
             }
             .resume()
+    }
+
+    func didSelectCharacter(_ character: Character) {
+        coordinator.goToDetailWith(character: character)
     }
 }

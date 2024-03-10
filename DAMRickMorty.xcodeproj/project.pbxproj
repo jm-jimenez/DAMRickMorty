@@ -27,6 +27,7 @@
 		1AB461132B9DD8DB002AA8F8 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB461112B9DD8DB002AA8F8 /* EpisodeCell.swift */; };
 		1AB461142B9DD8DB002AA8F8 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB461122B9DD8DB002AA8F8 /* EpisodeCell.xib */; };
 		1AB461162B9DD9AE002AA8F8 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB461152B9DD9AE002AA8F8 /* Episode.swift */; };
+		1AB461182B9E0FBF002AA8F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB461172B9E0FBF002AA8F8 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		1AB461112B9DD8DB002AA8F8 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		1AB461122B9DD8DB002AA8F8 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		1AB461152B9DD9AE002AA8F8 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		1AB461172B9E0FBF002AA8F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				1AB460F62B9DC7ED002AA8F8 /* Character.swift */,
 				1AB460F82B9DC997002AA8F8 /* GetCharactersReponse.swift */,
 				1AB461152B9DD9AE002AA8F8 /* Episode.swift */,
+				1AB461172B9E0FBF002AA8F8 /* Coordinator.swift */,
 			);
 			path = DAMRickMorty;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				1AB461092B9DD12D002AA8F8 /* RickMortyDetailPresenter.swift in Sources */,
 				1AB460F92B9DC997002AA8F8 /* GetCharactersReponse.swift in Sources */,
 				1AB461132B9DD8DB002AA8F8 /* EpisodeCell.swift in Sources */,
+				1AB461182B9E0FBF002AA8F8 /* Coordinator.swift in Sources */,
 				1A81787E2B95E5A300245ACD /* AppDelegate.swift in Sources */,
 				1AB461162B9DD9AE002AA8F8 /* Episode.swift in Sources */,
 				1AB461062B9DCFE8002AA8F8 /* RickMortyDetailViewController.swift in Sources */,

@@ -22,10 +22,9 @@ final class RickMortyListViewController: UIViewController {
 
     private var presenter: RickMortyListPresenterProtocol
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        presenter = RickMortyListPresenter()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        presenter.view = self
+    init(presenter: RickMortyListPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: "RickMortyListViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -65,9 +64,6 @@ extension RickMortyListViewController: UITableViewDataSource, UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let presenter = RickMortyDetailPresenter(character: characters[indexPath.item])
-        let vc = RickMortyDetailViewController(presenter: presenter)
-        presenter.view = vc
-        navigationController?.pushViewController(vc, animated: true)
+        presenter.didSelectCharacter(characters[indexPath.item])
     }
 }

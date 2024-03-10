@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         let navigationController = UINavigationController()
-        let vc = RickMortyListViewController(nibName: "RickMortyListViewController", bundle: nil)
-        navigationController.viewControllers = [vc]
+        let coordinator = Coordinator(navigationController: navigationController)
+        coordinator.setupInitialViewController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

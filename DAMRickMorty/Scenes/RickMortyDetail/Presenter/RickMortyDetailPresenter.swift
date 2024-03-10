@@ -36,7 +36,8 @@ private extension RickMortyDetailPresenter {
             guard let last = split.last else { return nil }
             return Int(String(last))
         }
-        guard let url = URL(string: "https://rickandmortyapi.com/api/episode/\(episodesArray)") else { return }
+        let urlString = "https://rickandmortyapi.com/api/episode/\(episodesArray)".replacingOccurrences(of: " ", with: "")
+        guard let url = URL(string: urlString) else { return }
         URLSession.shared
             .dataTask(with: url) { data, _, _ in
                 guard let data else { return }
