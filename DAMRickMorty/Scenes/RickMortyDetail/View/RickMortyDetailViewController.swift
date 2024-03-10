@@ -18,6 +18,11 @@ final class RickMortyDetailViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     private let presenter: RickMortyDetailPresenterProtocol
+    private var sections: [DetailSections] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     init(presenter: RickMortyDetailPresenterProtocol) {
         self.presenter = presenter
@@ -30,6 +35,8 @@ final class RickMortyDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        setupTableView()
         presenter.viewDidLoad()
     }
 }
@@ -38,12 +45,24 @@ extension RickMortyDetailViewController: RickMortyDetailViewProtocol {
     func setCharacterInfo(_ character: Character) {
         loadImageFrom(url: character.image)
         nameLabel.text = character.name
+        let viewModels =
+        [DetailItemViewModel(title: "Name", value: character.name),
+         DetailItemViewModel(title: "Species", value: character.species),
+         DetailItemViewModel(title: "Status", value: character.status)
+        ]
+        sections = [.detail(viewModels: viewModels)]
     }
 }
 
 private extension RickMortyDetailViewController {
     func setupViews() {
         characterImage.layer.cornerRadius = characterImage.frame.width / 2
+    }
+
+    func setupTableView() {
+        tableView.register(UINib(nibName: "DetailItemCell", bundle: nil), forCellReuseIdentifier: "DetailItemCellReuse")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     func loadImageFrom(url: String) {
@@ -56,5 +75,20 @@ private extension RickMortyDetailViewController {
                 }
             }
             .resume()
+    }
+}
+
+extension RickMortyDetailViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        sections[section].numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        sections[indexPath.section].cell(for: tableView, at: indexPath)
     }
 }
