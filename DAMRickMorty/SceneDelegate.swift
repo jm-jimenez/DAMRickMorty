@@ -15,8 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
+        let navigationController = UINavigationController()
         let vc = RickMortyListViewController(nibName: "RickMortyListViewController", bundle: nil)
-        window?.rootViewController = vc
+        navigationController.viewControllers = [vc]
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }

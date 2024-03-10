@@ -63,4 +63,11 @@ extension RickMortyListViewController: UITableViewDataSource, UITableViewDelegat
         cell.setupCharacter(characters[indexPath.item])
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let presenter = RickMortyDetailPresenter(character: characters[indexPath.item])
+        let vc = RickMortyDetailViewController(presenter: presenter)
+        presenter.view = vc
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
