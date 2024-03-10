@@ -17,6 +17,7 @@
 		1A8178942B95E63700245ACD /* RickMortyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8178922B95E63700245ACD /* RickMortyListViewController.xib */; };
 		1AB460F72B9DC7ED002AA8F8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB460F62B9DC7ED002AA8F8 /* Character.swift */; };
 		1AB460F92B9DC997002AA8F8 /* GetCharactersReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB460F82B9DC997002AA8F8 /* GetCharactersReponse.swift */; };
+		1AB461002B9DCE13002AA8F8 /* RickMortyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB460FF2B9DCE13002AA8F8 /* RickMortyListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1A8178922B95E63700245ACD /* RickMortyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RickMortyListViewController.xib; sourceTree = "<group>"; };
 		1AB460F62B9DC7ED002AA8F8 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		1AB460F82B9DC997002AA8F8 /* GetCharactersReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersReponse.swift; sourceTree = "<group>"; };
+		1AB460FF2B9DCE13002AA8F8 /* RickMortyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +66,60 @@
 		1A81787C2B95E5A300245ACD /* DAMRickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				1AB460FA2B9DCDD7002AA8F8 /* Scenes */,
 				1A81787D2B95E5A300245ACD /* AppDelegate.swift */,
 				1A81787F2B95E5A300245ACD /* SceneDelegate.swift */,
 				1A8178862B95E5A500245ACD /* Assets.xcassets */,
 				1A8178882B95E5A500245ACD /* LaunchScreen.storyboard */,
 				1A81788B2B95E5A500245ACD /* Info.plist */,
-				1A8178912B95E63700245ACD /* RickMortyListViewController.swift */,
-				1A8178922B95E63700245ACD /* RickMortyListViewController.xib */,
-				1A04719C2B9DC5DB00752E98 /* RickMortyListCell.swift */,
-				1A04719D2B9DC5DB00752E98 /* RickMortyListCell.xib */,
 				1AB460F62B9DC7ED002AA8F8 /* Character.swift */,
 				1AB460F82B9DC997002AA8F8 /* GetCharactersReponse.swift */,
 			);
 			path = DAMRickMorty;
+			sourceTree = "<group>";
+		};
+		1AB460FA2B9DCDD7002AA8F8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1AB460FB2B9DCDDE002AA8F8 /* RickMortyList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1AB460FB2B9DCDDE002AA8F8 /* RickMortyList */ = {
+			isa = PBXGroup;
+			children = (
+				1AB460FE2B9DCE01002AA8F8 /* Presenter */,
+				1AB460FC2B9DCDE6002AA8F8 /* View */,
+			);
+			path = RickMortyList;
+			sourceTree = "<group>";
+		};
+		1AB460FC2B9DCDE6002AA8F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AB460FD2B9DCDF3002AA8F8 /* ViewComponents */,
+				1A8178912B95E63700245ACD /* RickMortyListViewController.swift */,
+				1A8178922B95E63700245ACD /* RickMortyListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1AB460FD2B9DCDF3002AA8F8 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1A04719C2B9DC5DB00752E98 /* RickMortyListCell.swift */,
+				1A04719D2B9DC5DB00752E98 /* RickMortyListCell.xib */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		1AB460FE2B9DCE01002AA8F8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1AB460FF2B9DCE13002AA8F8 /* RickMortyListPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB461002B9DCE13002AA8F8 /* RickMortyListPresenter.swift in Sources */,
 				1A8178932B95E63700245ACD /* RickMortyListViewController.swift in Sources */,
 				1AB460F92B9DC997002AA8F8 /* GetCharactersReponse.swift in Sources */,
 				1A81787E2B95E5A300245ACD /* AppDelegate.swift in Sources */,

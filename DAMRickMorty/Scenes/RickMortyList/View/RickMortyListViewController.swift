@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RickMortyListViewProtocol: AnyObject {
+    func setCharacters(_ characters: [Character])
+}
+
 final class RickMortyListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
@@ -16,10 +20,22 @@ final class RickMortyListViewController: UIViewController {
         }
     }
 
+    private var presenter: RickMortyListPresenterProtocol
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        presenter = RickMortyListPresenter()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        presenter.view = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        getCharacters()
+        presenter.getCharacters()
     }
 }
 
@@ -29,18 +45,11 @@ private extension RickMortyListViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+}
 
-    func getCharacters() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
-        URLSession.shared
-            .dataTask(with: url) { data, _, _ in
-                guard let data else { return }
-                guard let result = try? JSONDecoder().decode(GetCharactersReponse.self, from: data) else { return }
-                DispatchQueue.main.async {
-                    self.characters = result.results
-                }
-            }
-            .resume()
+extension RickMortyListViewController: RickMortyListViewProtocol {
+    func setCharacters(_ characters: [Character]) {
+        self.characters = characters
     }
 }
 
